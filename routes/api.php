@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/points', [App\Http\Controllers\PointsController::class, 'index']);
 Route::post('/userslogin', [App\Http\Controllers\UserloginController::class, 'store']);
 
 
