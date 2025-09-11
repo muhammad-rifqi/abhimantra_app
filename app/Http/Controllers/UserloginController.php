@@ -42,7 +42,7 @@ class UserloginController extends Controller
         header("Access-Control-Allow-Origin: *");
         $data = Userlogin::where('email','=',$request->email)->where('password','=',$request->password)->first();
         if($data != null){
-            return response()->json($data);
+            return response()->json(["success"=>"true","rows"=>$data]);
         }else{
             return response()->json(["success"=>"failed"]);
         }
